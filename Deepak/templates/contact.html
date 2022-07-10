@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid my-3">
+{% comment %} <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" class="d-block w-100 mx-0" width="500" height="700" alt="..."> {% endcomment %}
+</div>
+<div class="container">
+<h1 class="text-center">Contact Us:-</h1>
+<form method="post" action="{% url 'contact' %}">
+{% csrf_token %}
+      <form>
+            <div class="mb-3">
+
+                  <input type="text" placeholder="John" name="name" class="form-control" >
+                  
+                </div>
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email address:-</label>
+              <input type="email" placeholder="John@gmail.com" class="form-control" name="Email" aria-describedby="emailHelp">
+              <div id="emailHelp" id="Email" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="Number" class="form-label">Phone Number:-</label>
+              <input type="Number" name="Number" placeholder="123-45-678" class="form-control size=50% id="exampleInputNumber1">
+            </div>
+            <div>
+            <select class="form-select" name="select" aria-label="Default select example">
+                  <option selected>Select Your Plan</option>
+                  <option value="1">1 Month</option>
+                  <option value="2">3 Month</option>
+                  <option value="3">6 Month</option>
+                  <option value="4">1 Year</option>
+                </select>
+            </div>
+            
+            <br><label for="taccheck" class="tacbox">
+                  <input id="taccheck" type="checkbox" />
+                  I agree to these Terms and Conditions <a href="#" onclick="MyFunction();"></a>
+                </label><br>
+            <div class="#">
+                  <ol class="p1 m0">
+                        <li>Subject to Fitness First India terms and conditions of entry (available in club).</li>
+                        <li>Valid for first time visitors aged 16 years and above only.&nbsp;</li>
+                        
+                        <li>An appointment must be made in advance for the first visit which must be accompanied by a Fitness First India Consultant.</li>
+                        <li>Trial pass is for one-time use only and cannot be accumulated. Must be used within 30 days.</li>
+                        <li>By clicking on submit you authorize Fitness First India or its representative to contact you via phone, email or SMS overriding your NDNC registration.</li>
+                  </ol>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+</form>
+</div>
+
+
+
+{% endblock body %}
